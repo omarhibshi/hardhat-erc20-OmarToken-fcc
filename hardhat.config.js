@@ -18,6 +18,9 @@ const MUSCAT_PRIVATE_KEY = process.env.MUSCAT_PRIVATE_KEY
 const PARIS_PRIVATE_KEY = process.env.PARIS_PRIVATE_KEY
 const ARAFAT_PRIVATE_KEY = process.env.ARAFAT_PRIVATE_KEY
 const SHOUAIB_PRIVATE_KEY = process.env.SHOUAIB_PRIVATE_KEY
+const HARDHAT_NODE_ACCOUNT_1 = process.env.HARDHAT_NODE_ACCOUNT_1
+const HARDHAT_NODE_ACCOUNT_5 = process.env.HARDHAT_NODE_ACCOUNT_5
+
 const REPORT_GAS = process.env.REPORT_GAS || false
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -31,7 +34,11 @@ module.exports = {
         },
         sepolia: {
             url: SEPOLIA_RPC_URL,
-            accounts: [SANAA_PRIVATE_KEY],
+            accounts: [
+                SHOUAIB_PRIVATE_KEY,
+                SANAA_PRIVATE_KEY,
+                MUSCAT_PRIVATE_KEY,
+            ],
             saveDeployments: true,
             chainId: 11155111,
             blockConfirmations: 6,
